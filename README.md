@@ -1,9 +1,5 @@
 <p align="center">
-    <a href="https://developers.google.com/products/" target="_blank">
-        <img src="https://developers.google.com/_static/2bced1f68f/images/redesign-14/lockup-color.png" width="300px">
-    </a>
     <h1 align="center">Google API Client Helper</h1>
-    <br>
 </p>
 
 Google APIs Client Helper - Easy way to accessing Google APIs with PHP
