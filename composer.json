@@ -1,9 +1,9 @@
 {
-    "name": "yidas/google-apiclient-helper",
+    "name": "nueip/google-api-client-helper",
     "type": "library",
     "description": "Google APIs Client Helper - Easy way to accessing Google APIs with PHP",
     "keywords": ["google api", "php sdk", "google api client", "helper"],
-    "homepage": "https://github.com/yidas/php-google-api-client-helper",
+    "homepage": "https://github.com/nueip/php-google-api-client-helper",
     "license": "MIT",
     "require": {
         "php": ">=5.4",
@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "yidas\\google\\apiHelper\\": "src/"
+            "nueip\\google\\apiHelper\\": "src/"
         }
     }
 }

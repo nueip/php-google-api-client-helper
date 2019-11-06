@@ -1,6 +1,6 @@
 <?php
 
-namespace yidas\google\apiHelper\services;
+namespace nueip\google\apiHelper\services;
 
 use Exception;
 use Google_Service_PeopleService;
@@ -19,7 +19,7 @@ use Google_Service_PeopleService_Name;
  *  try {} catch (Google_Service_Exception $e) {}
  *  
  */
-class People extends \yidas\google\apiHelper\AbstractService
+class People extends \nueip\google\apiHelper\AbstractService
 {
     /**
      * Current Service class name

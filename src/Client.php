@@ -1,6 +1,6 @@
 <?php
 
-namespace yidas\google\apiHelper;
+namespace nueip\google\apiHelper;
 
 use Google_Client;
 use Exception;
@@ -73,7 +73,7 @@ class Client
      *
      * @return array|false return false if AccessToken is not expired, else return new AccessToken
      * @example
-     *  if ($newAccessToken = yidas\google\apiHelper\Client::refreshAccessToken())
+     *  if ($newAccessToken = nueip\google\apiHelper\Client::refreshAccessToken())
      *      saveNewAccessToken($newAccessToken);
      */
     public static function refreshAccessToken()
@@ -147,7 +147,7 @@ class Client
      * @return array|false Returns the token payload as an array if the verification was
      * successful, false otherwise.
      * @example 
-     *  $result = \yidas\google\apiHelper\Client::verifyScopes([
+     *  $result = \nueip\google\apiHelper\Client::verifyScopes([
      *      'https://www.googleapis.com/auth/userinfo.profile',
      *  ]);
      */

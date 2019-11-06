@@ -8,9 +8,9 @@
 
 Google APIs Client Helper - Easy way to accessing Google APIs with PHP
 
-[![Latest Stable Version](https://poser.pugx.org/yidas/google-apiclient-helper/v/stable?format=flat-square)](https://packagist.org/packages/yidas/google-apiclient-helper)
-[![Latest Unstable Version](https://poser.pugx.org/yidas/google-apiclient-helper/v/unstable?format=flat-square)](https://packagist.org/packages/yidas/google-apiclient-helper)
-[![License](https://poser.pugx.org/yidas/google-apiclient-helper/license?format=flat-square)](https://packagist.org/packages/yidas/google-apiclient-helper)
+[![Latest Stable Version](https://poser.pugx.org/nueip/google-api-client-helper/v/stable?format=flat-square)](https://packagist.org/packages/nueip/google-api-client-helper)
+[![Latest Unstable Version](https://poser.pugx.org/nueip/google-api-client-helper/v/unstable?format=flat-square)](https://packagist.org/packages/nueip/google-api-client-helper)
+[![License](https://poser.pugx.org/nueip/google-api-client-helper/license?format=flat-square)](https://packagist.org/packages/nueip/google-api-client-helper)
 
 
 FEATURES
@@ -57,7 +57,7 @@ DEMONSTRATION
 -------------
 
 ```php
-$client = \yidas\google\apiHelper\Client::setClient()
+$client = \nueip\google\apiHelper\Client::setClient()
     ->setApplicationName('Google API')
     ->setAuthConfig('/path/google_api_secret.json')
     ->setRedirectUri("http://{$_SERVER['HTTP_HOST']}" . dirname($_SERVER['PHP_SELF'])
@@ -69,7 +69,7 @@ if ($accessToken = ClientHelper::refreshAccessToken()) {
 }
 
 // People Service uses Google_Client from Client helper above
-$contacts = \yidas\google\apiHelper\services\People::getSimpleContacts();
+$contacts = \nueip\google\apiHelper\services\People::getSimpleContacts();
 ```
 
 ---
@@ -89,14 +89,14 @@ INSTALLATION
 
 Run Composer in your project:
 
-    composer require yidas/google-apiclient-helper
+    composer require nueip/google-apiclient-helper
     
 Then you could call it after Composer is loaded depended on your PHP framework:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
 
-use yidas\google\apiHelper\Client;
+use nueip\google\apiHelper\Client;
 ```
 
 ---
@@ -113,7 +113,7 @@ There are many way to set `Google_Client` by Helper:
 The config keys refer to the methods of `Google_Client`. For exmaple, `authConfig` refers to `Google_Client->setAuthConfig()`.
 
 ```php
-$client = \yidas\google\apiHelper\Client::setClient([
+$client = \nueip\google\apiHelper\Client::setClient([
         'applicationName' => 'Google API',
         'authConfig' => '/path/google_api_secret.json',
         'redirectUri' => "http://{$_SERVER['HTTP_HOST']}" . dirname($_SERVER['PHP_SELF'],
@@ -126,7 +126,7 @@ $client = \yidas\google\apiHelper\Client::setClient([
 The methods refer to the same method names of `Google_Client`. For exmaple, `setAuthConfig()` refers to `Google_Client->setAuthConfig()`.
 
 ```php
-$client = \yidas\google\apiHelper\Client::setClient()
+$client = \nueip\google\apiHelper\Client::setClient()
     ->setApplicationName('Google API')
     ->setAuthConfig('/path/google_api_secret.json')
     ->setRedirectUri("http://{$_SERVER['HTTP_HOST']}" . dirname($_SERVER['PHP_SELF'])
@@ -138,7 +138,7 @@ $client = \yidas\google\apiHelper\Client::setClient()
 ```php
 $client = new Google_Client();
 $client->setAuthConfig('/path/google_api_secret.json');
-\yidas\google\apiHelper\Client::setClient($client);
+\nueip\google\apiHelper\Client::setClient($client);
 ```
 
 > After encapsulating Google_Client into Helper, the Helper would share with the same Google_Client object.
@@ -156,7 +156,7 @@ public static array|false refreshAccessToken()
 *Example:*
 
 ```php
-$client = \yidas\google\apiHelper\Client::setClient()
+$client = \nueip\google\apiHelper\Client::setClient()
     ->setApplicationName('Google API')
     ->setAuthConfig('/path/google_api_secret.json')
     ->setRedirectUri("http://{$_SERVER['HTTP_HOST']}" . dirname($_SERVER['PHP_SELF'])
@@ -189,7 +189,7 @@ public static array|false verifyScopes(array $scopes, string $accessToken=null)
 
 *Example:*
 ```php
-$result = \yidas\google\apiHelper\Client::verifyScopes([
+$result = \nueip\google\apiHelper\Client::verifyScopes([
     'https://www.googleapis.com/auth/userinfo.profile',
 ]);
 ```
@@ -198,18 +198,18 @@ $result = \yidas\google\apiHelper\Client::verifyScopes([
 
 There are more implementations such as `addScope()` or `createAuthUrl()` for OAuth register, you cloud refer following sample code:
 
-[yidas/php-google-api-sample](https://github.com/yidas/php-google-api-sample)
+[nueip/php-google-api-sample](https://github.com/nueip/php-google-api-sample)
 
 ---
 
 GOOGLE SERVICES
 ---------------
 
-You could directly use any Service Helpers which uses `Google_Client` from `yidas\google\apiHelper\Client`:
+You could directly use any Service Helpers which uses `Google_Client` from `nueip\google\apiHelper\Client`:
 
 ```php
-use \yidas\google\apiHelper\services\People as PeopleHelper;
-\yidas\google\apiHelper\Client::setClient([...])
+use \nueip\google\apiHelper\services\People as PeopleHelper;
+\nueip\google\apiHelper\Client::setClient([...])
 
 $contacts = PeopleHelper::getSimpleContacts();
 ```
@@ -217,7 +217,7 @@ $contacts = PeopleHelper::getSimpleContacts();
 Or you could reset a `Google_Client` for each Service Helper:
 
 ```php
-use \yidas\google\apiHelper\services\People as PeopleHelper;
+use \nueip\google\apiHelper\services\People as PeopleHelper;
 
 PeopleHelper::setClient($googleClient);
 // PeopleHelper::method()...
@@ -226,7 +226,7 @@ PeopleHelper::setClient($googleClient);
 Use `getService()` to get back current Google Service object for advanced usage:
 
 ```php
-$service = \yidas\google\apiHelper\services\People::getService();
+$service = \nueip\google\apiHelper\services\People::getService();
 // $service->people_connections->...
 ```
 
@@ -238,7 +238,7 @@ People helper has smart call refered to [Google_Service_PeopleService_Person](ht
 
 ```php
 // Simple setValue() example
-\yidas\google\apiHelper\services\People::newPerson
+\nueip\google\apiHelper\services\People::newPerson
     ->setEmailAddresses('myintaer@gmail.com')
     ->setPhoneNumbers('+886')
     ->setBiographies("I'm a note");
@@ -255,7 +255,7 @@ Input by original Google Attribute Classes that are not so convenience.
 ```php
 $gPhoneNumber = new Google_Service_PeopleService_PhoneNumber;
 $gPhoneNumber->setValue('+886');
-\yidas\google\apiHelper\services\People::setPhoneNumbers($gPhoneNumber);
+\nueip\google\apiHelper\services\People::setPhoneNumbers($gPhoneNumber);
 ```
 
 ##### 2. Array
@@ -263,7 +263,7 @@ $gPhoneNumber->setValue('+886');
 Input by array type would map to the API key-value setting.
 
 ```php
-\yidas\google\apiHelper\services\People::setPhoneNumbers(['value' => '+886']);
+\nueip\google\apiHelper\services\People::setPhoneNumbers(['value' => '+886']);
 ```
 
 ##### 3. String
@@ -271,7 +271,7 @@ Input by array type would map to the API key-value setting.
 Input by string type would enable Helper attribute handler which automatically settles value for all attributes.
 
 ```php
-\yidas\google\apiHelper\services\People::setPhoneNumbers('+886');
+\nueip\google\apiHelper\services\People::setPhoneNumbers('+886');
 ```
 
 #### getSimpleContacts()
@@ -285,7 +285,7 @@ public static array getContacts()
 *Example:*
 ```php
 // Get formated list by Helper
-$contacts = \yidas\google\apiHelper\services\People::getSimpleContacts();
+$contacts = \nueip\google\apiHelper\services\People::getSimpleContacts();
 ```
 
 Result:
@@ -315,7 +315,7 @@ public static Google_Service_PeopleService_Person createContact()
 
 *Example:*
 ```php
-$person = \yidas\google\apiHelper\services\People::newPerson()
+$person = \nueip\google\apiHelper\services\People::newPerson()
     ->setNames('Nick')
     ->setEmailAddresses('myintaer@gmail.com')
     ->setPhoneNumbers('+886')
@@ -334,7 +334,7 @@ public static Google_Service_PeopleService_PeopleEmpty updateContact(array $optP
 
 *Example:*
 ```php
-$person = \yidas\google\apiHelper\services\People::findByResource($resourceName)
+$person = \nueip\google\apiHelper\services\People::findByResource($resourceName)
     ->setNames('Nick')
     ->setEmailAddresses('myintaer@gmail.com')
     ->setPhoneNumbers('+886')
@@ -351,13 +351,13 @@ public static Google_Service_PeopleService_PeopleEmpty deleteContact(string $res
 
 *Example:*
 ```php
-$person = \yidas\google\apiHelper\services\People::deleteContact($resourceName);
+$person = \nueip\google\apiHelper\services\People::deleteContact($resourceName);
 ```
 
 You could also use find pattern:
 
 ```php
-$person = \yidas\google\apiHelper\services\People::findByResource($resourceName)
+$person = \nueip\google\apiHelper\services\People::findByResource($resourceName)
     ->deleteContact();
 ```
 

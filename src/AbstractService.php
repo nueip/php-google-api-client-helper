@@ -1,10 +1,10 @@
 <?php
 
-namespace yidas\google\apiHelper;
+namespace nueip\google\apiHelper;
 
 use Google_Client;
 use Google_Service;
-use yidas\google\apiHelper\Client;
+use nueip\google\apiHelper\Client;
 
 /**
  * Service Helper
@@ -47,7 +47,7 @@ abstract class AbstractService
     /**
      * Get Google Client from ClientHelper
      *
-     * @return Google_Client By yidas\google\apiHelper\Client
+     * @return Google_Client By nueip\google\apiHelper\Client
      */
     public static function getClient()
     {
