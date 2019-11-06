@@ -289,7 +289,7 @@ class People extends \nueip\google\apiHelper\AbstractService
         // Skip common method parameter
         if (is_object($input) || is_array($input)) {
 
-            return self::__callStatic($name, [$input]);
+            return self::__callStatic(__FUNCTION__, [$input]);
         }
         
         // Name format helper
@@ -315,7 +315,7 @@ class People extends \nueip\google\apiHelper\AbstractService
         // Skip common method parameter
         if (is_object($input) || is_array($input)) {
 
-            return self::__callStatic($name, [$input]);
+            return self::__callStatic(__FUNCTION__, [$input]);
         }
 
         // Date format helper
