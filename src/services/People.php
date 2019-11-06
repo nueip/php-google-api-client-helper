@@ -51,12 +51,8 @@ class People extends \nueip\google\apiHelper\AbstractService
      */
     protected static $personAttrMap = [
         'setAddresses' => '\Google_Service_PeopleService_Address',
-        'setAgeRange' => '\Google_Service_PeopleService_AgeRangeType',
-        'setAgeRanges' => '\Google_Service_PeopleService_AgeRangeType',
         'setBiographies' => '\Google_Service_PeopleService_Biography',
         'setBirthdays' => '\Google_Service_PeopleService_Birthday',
-        'setBraggingRights' => '\Google_Service_PeopleService_BraggingRights',
-        'setCoverPhotos' => '\Google_Service_PeopleService_CoverPhoto',
         'setEmailAddresses' => '\Google_Service_PeopleService_EmailAddress',
         'setEvents' => '\Google_Service_PeopleService_Event',
         'setGenders' => '\Google_Service_PeopleService_Gender',
@@ -69,14 +65,9 @@ class People extends \nueip\google\apiHelper\AbstractService
         'setOccupations' => '\Google_Service_PeopleService_Occupation',
         'setOrganizations' => '\Google_Service_PeopleService_Organization',
         'setPhoneNumbers' => '\Google_Service_PeopleService_PhoneNumber',
-        'setPhotos' => '\Google_Service_PeopleService_Photo',
         'setRelations' => '\Google_Service_PeopleService_Relation',
-        'setRelationshipInterests' => '\Google_Service_PeopleService_RelationshipInterest',
-        'setRelationshipStatuses' => '\Google_Service_PeopleService_RelationshipStatus',
         'setResidences' => '\Google_Service_PeopleService_Residence',
         'setSipAddresses' => '\Google_Service_PeopleService_SipAddress',
-        'setSkills' => '\Google_Service_PeopleService_Skill',
-        'setTaglines' => '\Google_Service_PeopleService_Tagline',
         'setUrls' => '\Google_Service_PeopleService_Url',
         ];
 
@@ -87,11 +78,8 @@ class People extends \nueip\google\apiHelper\AbstractService
      */
     protected static $personFields = [
         'addresses',
-        'ageRanges',
         'biographies',
         'birthdays',
-        'braggingRights',
-        'coverPhotos',
         'emailAddresses',
         'events',
         'genders',
@@ -99,19 +87,13 @@ class People extends \nueip\google\apiHelper\AbstractService
         'interests',
         'locales',
         'memberships',
-        'metadata',
         'names',
         'nicknames',
         'occupations',
         'organizations',
         'phoneNumbers',
-        'photos',
         'relations',
-        'relationshipInterests',
-        'relationshipStatuses',
         'residences',
-        'skills',
-        'taglines',
         'urls',
     ];
 
